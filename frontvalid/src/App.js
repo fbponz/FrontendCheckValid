@@ -20,7 +20,7 @@ function App() {
           <Search />
           </div>
           <div className="basic-3/3">
-            <label className="text-black">Esta Afectado: {data.isAffected}</label>
+            <label className="text-black">Esta Afectado: </label>
           </div>
         </div>
         <SingleMap />
