@@ -1,10 +1,10 @@
-import './App.css';
+import './styles/App.css';
 import React, {useContext} from 'react';
 import Search from './search';
 import myGif from './Logo2.gif';
 import SingleMap from './Map';
 import 'leaflet/dist/leaflet.css';
-import { DataContext } from './DataContext';
+import { DataContext } from './contexts/DataContext';
 
 function App() {
   const data = useContext(DataContext);

@@ -6,9 +6,8 @@ const SimpleMap = () => {
     const mapRef = useRef(null);
     const latitude = 39.4058341;
     const longitude = -0.4659779;
-    
-  
-    return ( 
+
+    return (
       // Make sure you set the height and width of the map container otherwise the map won't show
         <MapContainer center={[latitude, longitude]} zoom={15} ref={mapRef} style={{height: "100vh", width: "100vw"}}>
           <TileLayer
@@ -19,5 +18,5 @@ const SimpleMap = () => {
         </MapContainer>
     );
   };
-  
+
   export default SimpleMap;

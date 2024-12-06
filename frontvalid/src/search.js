@@ -1,31 +1,15 @@
 import React, { useState } from 'react';
-import { DataContext } from './DataContext';
+import { checkValid } from './services/dataService';
+import { DataContext } from './contexts/DataContext';
 import { useContext } from 'react';
 
 const Search = () => {
     const [inputValue, setInputValue] = useState('');
-    const [data, setData] = useState({ isAffected: false , latitude: '', longitude: '' });
 
     const handleSubmit = async () => {
-      try {
-        const response = await fetch('https://nodevercel-rust.vercel.app/CheckValid', {
-          mode: 'cors',
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ streetName: inputValue }),
-        });
-        if (response.ok) {
-            const data = await response.json();
-            console.log('Response data:', data);
-            setData(data);
-        } else {
-          console.error('Error submitting data');
-        }
-      } catch (error) {
-        console.error('Error:', error);
-      }
+        const data = await checkValid(inputValue);
+        console.log('Response data:', data);
+        setInputValue('');
     };
 
     return (
