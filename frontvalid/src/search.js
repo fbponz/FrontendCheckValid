@@ -8,7 +8,7 @@ const Search = () => {
 
     const handleSubmit = async () => {
       try {
-        const response = await fetch('http://localhost:3000/CheckValid', {
+        const response = await fetch('https://nodevercel-rust.vercel.app/CheckValid', {
           mode: 'cors',
           method: 'POST',
           headers: {
